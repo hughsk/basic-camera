@@ -1,0 +1,35 @@
+{
+  "name": "basic-camera",
+  "version": "0.0.0",
+  "description": "A very basic camera for use in WebGL projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "say sorry && exit 1",
+    "start": "beefy demo.js:bundle.js -- -t brfs",
+    "prepublish": "browserify -t brfs demo.js > bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughsk/basic-camera.git"
+  },
+  "author": "Hugh Kennedy <hughskennedy@gmail.com> (http://hughskennedy.com/)",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "perlin": "~1.0.0",
+    "mesh-normals": "0.0.0",
+    "heightmap-mesher": "0.0.0",
+    "gl-vao": "0.0.2",
+    "zeros": "0.0.0",
+    "gl-shader": "0.0.6",
+    "gl-now": "0.0.4",
+    "gl-buffer": "~0.1.1",
+    "beefy": "~0.4.1",
+    "ndarray-fill": "~0.1.0",
+    "brfs": "0.0.7",
+    "browserify": "~2.29.1"
+  },
+  "dependencies": {
+    "gl-matrix": "~2.0.0"
+  }
+}
