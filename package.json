@@ -30,6 +30,6 @@
     "browserify": "~2.29.1"
   },
   "dependencies": {
-    "gl-matrix": "~2.0.0"
+    "gl-matrix": "^2.2.1"
   }
 }
