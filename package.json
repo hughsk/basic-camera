@@ -1,6 +1,6 @@
 {
   "name": "basic-camera",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A very basic camera for use in WebGL projects",
   "main": "index.js",
   "scripts": {
