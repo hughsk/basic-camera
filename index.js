@@ -10,6 +10,7 @@ function noclip(position) {
 
   this.position = position || vec3.create()
   this.rotationX = this.rotationY = this.rotationZ = 0.0
+  this.cameraVector = vec3.create()
 }
 
 noclip.prototype.view = function(output) {
@@ -18,6 +19,11 @@ noclip.prototype.view = function(output) {
   mat4.rotateX(output, output, this.rotationX)
   mat4.rotateY(output, output, this.rotationY)
   mat4.rotateZ(output, output, this.rotationZ)
+
+  this.cameraVector[0] = output[2]
+  this.cameraVector[1] = output[6]
+  this.cameraVector[2] = output[10]
+
   mat4.translate(output
     , output
     , this.position
