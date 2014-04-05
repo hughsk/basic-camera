@@ -27,7 +27,7 @@
     "beefy": "~0.4.1",
     "ndarray-fill": "~0.1.0",
     "brfs": "0.0.7",
-    "browserify": "~2.29.1"
+    "browserify": "^3.38.0"
   },
   "dependencies": {
     "gl-matrix": "^2.2.1"
