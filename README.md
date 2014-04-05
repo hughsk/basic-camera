@@ -31,6 +31,10 @@ Rotates the camera along the y-axis by `radians`.
 
 Rotates the camera along the z-axis by `radians`.
 
+### `camera.getCameraVector(v)` ###
+
+Sets a `vec3` to a vector corresponding to the camera's direction.
+
 ### `camera.view([output])` ###
 
 Returns a new [gl-matrix](https://github.com/toji/gl-matrix) `mat4`, which you
