@@ -1,39 +1,39 @@
 var glm = require('gl-matrix')
 var vec3 = glm.vec3
-var mat3 = glm.mat3
 var mat4 = glm.mat4
 
 module.exports = noclip
+
+var scratch0 = mat4.create()
 
 function noclip(position) {
   if (!(this instanceof noclip)) return new noclip(position)
 
   this.position = position || vec3.create()
   this.rotationX = this.rotationY = this.rotationZ = 0.0
-  this._cameraVector = vec3.create()
 }
 
 noclip.prototype.view = function(output) {
   if (!output) output = mat4.create()
 
-  mat4.rotateX(output, output, this.rotationX)
-  mat4.rotateY(output, output, this.rotationY)
-  mat4.rotateZ(output, output, this.rotationZ)
-
-  this._cameraVector[0] = output[2]
-  this._cameraVector[1] = output[6]
-  this._cameraVector[2] = output[10]
+  mat4.identity(scratch0)
+  mat4.rotateX(scratch0, scratch0, this.rotationX)
+  mat4.rotateY(scratch0, scratch0, this.rotationY)
+  mat4.rotateZ(scratch0, scratch0, this.rotationZ)
 
   mat4.translate(output
-    , output
+    , scratch0
     , this.position
   )
 
   return output
 }
 
-noclip.prototype.cameraVector = function() {
-  return this._cameraVector
+noclip.prototype.getCameraVector = function(v) {
+  v[0] = scratch0[2]
+  v[1] = scratch0[6]
+  v[2] = scratch0[10]
+  return v
 }
 
 noclip.prototype.rotateX   = function(angle) {
